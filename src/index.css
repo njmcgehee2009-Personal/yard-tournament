@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-gray-50 text-gray-900 antialiased; }
+}
+
+@layer components {
+  .input {
+    @apply w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-grass-500 bg-white;
+  }
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+  .btn-primary {
+    @apply bg-grass-600 hover:bg-grass-700 text-white font-semibold px-4 py-2 rounded-lg transition disabled:opacity-50 text-sm;
+  }
+}
+
+@layer utilities {
+  .bracket-line::after {
+    content: '';
+    @apply absolute right-0 top-1/2 w-4 border-t-2 border-gray-300;
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
